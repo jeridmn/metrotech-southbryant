@@ -1,0 +1,9 @@
+<header fxLayoutAlign="center center">
+  <label>Menu Navigation</label>
+</header>
+<div fxLayout="column" class="menu-item-container" fxLayoutGap="5px">
+  <button mat-raised-button *ngFor="let menuItem of menuActivities" (click)="onMenuItemSelect(menuItem)">
+    <mat-icon class="mat-18">{{menuItem.icon}}</mat-icon>
+    {{menuItem.name}}
+  </button>
+</div>

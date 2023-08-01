@@ -1,0 +1,33 @@
+:host ::ng-deep mat-tab-header {
+  background-color: #173c8a;
+  color: white;
+}
+
+:host ::ng-deep .mdc-tab__text-label{
+  color: white !important;
+  letter-spacing: 0px;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+
+:host ::ng-deep .mdc-tab-indicator__content--underline{
+  border-color: transparent !important;
+}
+
+:host ::ng-deep .mdc-tab--active{
+  background-color: rgb(70, 166, 255);
+}
+
+.audio-container {
+  margin: 20px;
+}
+
+:host ::ng-deep .mat-mdc-tab-body-content{
+  margin-left: 50px;
+  width:90%;
+}
+
+
+
+
+

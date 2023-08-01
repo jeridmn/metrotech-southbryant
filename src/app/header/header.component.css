@@ -1,0 +1,35 @@
+mat-toolbar {
+  background-color: #173c8a;
+
+}
+
+mat-icon {
+  scale: 2;
+  color: white;
+}
+
+.page-title {
+  margin-left: 20px;
+  font-size: larger;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  color: white;
+
+}
+
+label {
+  margin-left: 35px;
+  color: white;
+  font-weight: 700;
+  font-family: 'Montserrat';
+}
+
+mat-slider {
+  width: 600px;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  max-width: none !important;
+}
+
+

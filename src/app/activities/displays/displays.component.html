@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutGap="20px">
+  <div
+  fxLayout="column"
+  class="display-container"
+  *ngFor="let display of displays"
+  fxLayoutGap="20px"
+  >
+    <label fxLayoutAlign="center start">{{display.name}}</label>
+    <button mat-raised-button (click)="displayOnPress(display)">ON</button>
+    <button mat-raised-button (click)="displayOffPress(display)">OFF</button>
+  </div>
+</div>

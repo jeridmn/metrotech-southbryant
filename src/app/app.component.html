@@ -1,0 +1,22 @@
+
+<mat-sidenav-container  class="global-container" hasBackdrop="false">
+  <mat-sidenav #sidenav mode="push" [(opened)]="menuOpened" >
+    <app-menu (menuItemSelected)="toggleMenu()"></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <div @fadeAnimation *ngIf="menuOpened" class="backdrop" (click)="toggleMenu()"></div>
+      <app-header
+      (menuToggled)="toggleMenu()"
+      *ngIf="router.url != '/'"
+      ></app-header>
+      <div fxLayoutAlign="center center" class="router-container">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
+
+

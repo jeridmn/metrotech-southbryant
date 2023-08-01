@@ -1,0 +1,9 @@
+<div class="home-container">
+  <div class="home-buttons-container" fxLayout="row wrap" >
+    <button mat-raised-button *ngFor="let activity of activities" (click)="onActivitySelect(activity)">
+      <mat-icon >{{activity.icon}}</mat-icon>
+      <label>{{activity.name}}</label>
+    </button>
+  </div>
+</div>
+

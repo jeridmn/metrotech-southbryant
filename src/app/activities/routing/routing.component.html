@@ -1,0 +1,37 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" >
+  <div class="routing-container" fxLayout="column" fxFlex="30">
+    <label>Inputs</label>
+    <div class="input-button-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex>
+      <button mat-raised-button
+      [ngClass]="selectedInput.id==input.id ? 'mat-primary' : ''"
+      class="matrix-input-button"
+      (click)="inputSelected(input)"
+      *ngFor="let input of matrixInputs">
+        <mat-icon class="mat-18">{{ input.icon }}</mat-icon>
+        {{ input.name }}
+      </button>
+    </div>
+  </div>
+  <div class="routing-container" fxFlex="70" fxLayout="column">
+    <label>Outputs</label>
+    <div fxLayout="row wrap" fxLayoutAlign="none center" fxFill>
+      <button mat-raised-button
+        [ngClass]="selectedInput.nvxStream==routingService.matrixRouting.get(output).nvxStream ? 'mat-primary' : ''"
+        class="matrix-output-button"
+        fxLayout="column"
+        fxLayoutAlign="space-between center"
+        (click)="outputSelected(output)"
+        *ngFor="let output of matrixOutputs" >
+          {{ output.name }}
+          <div class="output-input-container"
+          [ngClass]="selectedInput.nvxStream==routingService.matrixRouting.get(output).nvxStream ? 'active' : ''"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          fxLayoutGap="15px">
+            <mat-icon>{{routingService.matrixRouting.get(output).icon}}</mat-icon>
+            <p>{{routingService.matrixRouting.get(output).name}}</p>
+          </div>
+      </button>
+    </div>
+  </div>
+</div>

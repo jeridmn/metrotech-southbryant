@@ -1,0 +1,23 @@
+<div class="volume-container"
+fxLayout="column"
+fxLayoutAlign="none center"
+fxLayoutGap="10px">
+  <label>{{ volume.name }}</label>
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div class="meter-background"></div>
+    <div fxLayout="column" fxLayoutAlign="space-between">
+      <div fxLayout="column" fxLayoutGap="5px">
+        <button mat-raised-button class="volume-button">
+          <mat-icon class="mat-18">arrow_drop_up</mat-icon>
+        </button>
+        <button mat-raised-button class="volume-button">
+          <mat-icon class="mat-18">arrow_drop_down</mat-icon>
+        </button>
+      </div>
+      <button mat-raised-button class="volume-button">
+        <mat-icon class="mat-18" *ngIf="!volume.mic">volume_off</mat-icon>
+        <mat-icon class="mat-18" *ngIf="volume.mic">mic_off</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.splash-container {
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+
+}
+
+label {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 30px;
+}
+
+

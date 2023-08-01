@@ -1,0 +1,88 @@
+<div fxLayout="row" fxLayoutGap="20px">
+  <!-- CAMERA SELECT -->
+  <div class="camera-container" fxLayout="column">
+    <label>Select</label>
+    <div fxFlex
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px">
+      <button
+      class="camera-select-button"
+      mat-raised-button
+      [ngClass]="this.selectedCam==1 ? 'mat-primary' : ''"
+      (click)="leftCamSelect()">Left</button>
+      <button
+      class="camera-select-button"
+      mat-raised-button
+      [ngClass]="this.selectedCam==2 ? 'mat-primary' : ''"
+      (click)="centerCamSelect()">Center</button>
+      <button
+      class="camera-select-button"
+      mat-raised-button
+      [ngClass]="this.selectedCam==3 ? 'mat-primary' : ''"
+      (click)="rightCamSelect()">Right</button>
+    </div>
+  </div>
+  <!-- CAMERA CONTROL -->
+  <div class="camera-container" fxLayout="column">
+    <label>Control</label>
+    <div fxFlex
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    >
+
+      <button mat-raised-button class="camera-dpad-button"
+      (touchstart)="cameraPTZ(24)"
+      (touchend)="cameraStop()">
+        <mat-icon>arrow_drop_up</mat-icon>
+      </button>
+
+      <div fxLayout="row" fxLayoutGap="100px">
+        <button mat-raised-button class="camera-dpad-button"
+        (touchstart)="cameraPTZ(25)"
+        (touchend)="cameraStop()">
+          <mat-icon>arrow_left</mat-icon>
+        </button>
+        <button mat-raised-button class="camera-dpad-button"
+        (touchstart)="cameraPTZ(26)"
+        (touchend)="cameraStop()">
+          <mat-icon>arrow_right</mat-icon>
+        </button>
+      </div>
+
+      <button mat-raised-button class="camera-dpad-button"
+      (touchstart)="cameraPTZ(27)"
+      (touchend)="cameraStop()">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+
+
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <button mat-raised-button class="camera-zoom-button"
+      (touchstart)="cameraPTZ(28)"
+      (touchend)="cameraStop()">
+        <mat-icon>zoom_in</mat-icon>
+      </button>
+      <button mat-raised-button class="camera-zoom-button"
+      (touchstart)="cameraPTZ(29)"
+      (touchend)="cameraStop()">
+        <mat-icon>zoom_out</mat-icon>
+      </button>
+    </div>
+  </div>
+  <!-- CAMERA PRESETS -->
+  <div class="camera-container" fxLayout="column">
+    <label>Presets</label>
+    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" fxFlex>
+      <button
+      mat-raised-button
+      class="camera-preset-button"
+      (touchstart)="onPresetPress(preset)"
+      (touchend)="onPresetRelease(preset)"
+      *ngFor="let preset of cameraPresets">
+        Preset {{preset}}
+      </button>
+    </div>
+  </div>
+</div>
